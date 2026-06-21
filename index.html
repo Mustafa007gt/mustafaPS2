@@ -135,11 +135,13 @@
     }
 
     .game-card h2 {
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 8px 0;
+  color: #00f7ff;
+  text-shadow: 0 0 5px #00f7ff;
+  margin: 8px 0;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
     }
 
     /* نظام النجمات المضيئة المعزولة */
@@ -617,23 +619,22 @@
     searchInput.addEventListener('input', applyFilter);
 
     function applyFilter() {
-      const query = searchInput.value.toLowerCase();
-      const gameCards = document.querySelectorAll('.game-card');
+  const query = searchInput.value.toLowerCase();
+  const gameCards = document.querySelectorAll('.game-card');
 
-      gameCards.forEach(card => {
-        const title = card.querySelector('h2').textContent.toLowerCase();
-        const description = card.querySelector('p').textContent.toLowerCase();
-        const cardCategory = card.getAttribute('data-category');
+  gameCards.forEach(card => {
+    const title = card.querySelector('h2').textContent.toLowerCase();
+    const cardCategory = card.getAttribute('data-category');
 
-        const matchesSearch = title.includes(query) || description.includes(query);
-        const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
+    const matchesSearch = title.includes(query);
+    const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
 
-        if (matchesSearch && matchesCategory) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+    if (matchesSearch && matchesCategory) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
     }
 
     // نظام الإشعارات المنبثقة الـ Toast
