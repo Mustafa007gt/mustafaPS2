@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مصطفى جيمرز - مكتبة الألعاب</title>
+<title>مصطفى جيمرز - مكتبة ألعاب PS2</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 *{
@@ -18,16 +17,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 }
 
 :root{
-  --bg:#07070d;
-  --panel:#10101b;
-  --panel2:#151522;
-  --cyan:#00eaff;
-  --purple:#a855f7;
-  --pink:#ff28d7;
-  --gold:#ffd43b;
-  --text:#fff;
-  --muted:#999aaa;
-  --line:rgba(255,255,255,.08);
+  --ps2-black: #030508;
+  --ps2-dark-blue: #091326;
+  --ps2-blue: #00439c;
+  --ps2-neon: #0070d1;
+  --ps2-cyan: #00d4ff;
+  --ps2-purple: #6f22d2;
+  --text: #ffffff;
+  --muted: #7f93b0;
+  --line: rgba(0, 212, 255, 0.2);
 }
 
 html{
@@ -38,35 +36,35 @@ body{
   margin:0;
   font-family:'Cairo',sans-serif;
   color:var(--text);
-  background:
-    radial-gradient(circle at 15% 10%,rgba(0,234,255,.10),transparent 28%),
-    radial-gradient(circle at 85% 20%,rgba(168,85,247,.13),transparent 30%),
-    linear-gradient(145deg,#050509,#0c0b16 48%,#06060a);
+  background: #020305;
+  background-image: 
+    radial-gradient(circle at 50% 20%, #081d3d 0%, transparent 60%),
+    linear-gradient(to bottom, #020305 0%, #00050d 100%);
   min-height:100vh;
   overflow-x:hidden;
 }
 
+/* خلفية شاشة إقلاع PS2 */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.22;
-  background-image:
-    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-  background-size:42px 42px;
+  opacity:0.35;
+  background: 
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 212, 255, 0.05) 2px, rgba(0, 212, 255, 0.05) 4px);
+  z-index: 1;
 }
 
 header{
   position:sticky;
   top:0;
   z-index:999;
-  padding:12px 18px;
-  background:rgba(6,6,12,.78);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
-  box-shadow:0 8px 30px rgba(0,0,0,.35);
+  padding:14px 18px;
+  background: rgba(2, 3, 5, 0.88);
+  backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--ps2-neon);
+  box-shadow:0 4px 25px rgba(0, 112, 209, 0.3);
 }
 
 .nav{
@@ -79,32 +77,37 @@ header{
 }
 
 .logo{
-  width:43px;
-  height:43px;
-  border-radius:13px;
+  width:45px;
+  height:45px;
+  border-radius:8px;
   display:grid;
   place-items:center;
-  background:linear-gradient(135deg,var(--cyan),var(--purple));
-  box-shadow:0 0 22px rgba(0,234,255,.3);
-  font-size:21px;
+  background: linear-gradient(135deg, var(--ps2-blue), var(--ps2-purple));
+  border: 1px solid var(--ps2-cyan);
+  box-shadow:0 0 15px var(--ps2-neon);
+  font-size:22px;
+  color: #fff;
 }
 
 header h1{
   margin:0;
-  font-size:22px;
+  font-size:24px;
   font-weight:900;
-  background:linear-gradient(90deg,#fff,var(--cyan),#d26bff);
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #fff, var(--ps2-cyan), var(--ps2-neon));
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 /* البحث */
-
 .search-box{
   max-width:1280px;
-  margin:18px auto 5px;
+  margin:25px auto 10px;
   padding:0 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .search-wrap{
@@ -113,68 +116,62 @@ header h1{
 
 .search-wrap i{
   position:absolute;
-  right:15px;
+  right:16px;
   top:50%;
   transform:translateY(-50%);
-  color:#777;
+  color:var(--ps2-cyan);
 }
 
 #searchInput{
   width:100%;
-  padding:13px 45px 13px 15px;
-  border-radius:13px;
+  padding:14px 48px 14px 15px;
+  border-radius:8px;
   border:1px solid var(--line);
   outline:none;
-  background:rgba(13,13,23,.9);
+  background: rgba(9, 19, 38, 0.8);
   color:#fff;
   font-family:'Cairo',sans-serif;
-  transition:.25s;
+  transition:.3s;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
 }
 
 #searchInput:focus{
-  border-color:var(--cyan);
-  box-shadow:0 0 20px rgba(0,234,255,.12);
+  border-color:var(--ps2-cyan);
+  box-shadow:0 0 15px rgba(0, 212, 255, 0.4), inset 0 0 10px rgba(0,0,0,0.8);
 }
 
 .games-container{
   max-width:1280px;
   margin:auto;
-  padding:18px 20px 40px;
+  padding:20px 20px 40px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  gap:18px;
+  position: relative;
+  z-index: 2;
 }
 
 .game-card{
-  background:
-    linear-gradient(160deg,rgba(20,20,33,.94),rgba(10,10,17,.97));
+  background: linear-gradient(170deg, rgba(9, 19, 38, 0.9), rgba(3, 5, 8, 0.95));
   border:1px solid var(--line);
-  border-radius:18px;
+  border-radius:12px;
   padding:10px;
   position:relative;
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
   transition:.3s;
-  animation:cardIn .55s both;
+  animation:cardIn .5s both;
 }
 
 @keyframes cardIn{
-  from{
-    opacity:0;
-    transform:translateY(18px);
-  }
-  to{
-    opacity:1;
-    transform:none;
-  }
+  from{ opacity:0; transform:scale(0.95); }
+  to{ opacity:1; transform:scale(1); }
 }
 
 .game-card:hover{
   transform:translateY(-5px);
-  border-color:rgba(0,234,255,.3);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.4),
-    0 0 25px rgba(0,234,255,.08);
+  border-color:var(--ps2-cyan);
+  box-shadow: 0 10px 30px rgba(0, 112, 209, 0.35);
 }
 
 .game-card.hidden{
@@ -183,30 +180,30 @@ header h1{
 
 .game-card img{
   width:100%;
-  height:165px;
+  height:170px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:8px;
   display:block;
-  transition:.4s;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition:.3s;
 }
 
 .game-card:hover img{
-  transform:scale(1.06);
+  border-color: var(--ps2-cyan);
 }
 
 .game-card h2{
-  margin:11px 3px 12px;
-  font-size:16px;
+  margin:12px 3px 12px;
+  font-size:15px;
   color:#fff;
-  font-weight:900;
+  font-weight:800;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
   text-align:right;
 }
 
-/* الأزرار */
-
+/* أزرار نمط PS2 */
 .card-actions{
   display:flex;
   gap:8px;
@@ -216,61 +213,41 @@ header h1{
 .download-btn{
   flex:1;
   position:relative;
-  overflow:hidden;
-  border:0;
-  border-radius:11px;
+  border:1px solid var(--ps2-neon);
+  border-radius:6px;
   padding:10px 12px;
-  color:#061016;
-  background:linear-gradient(135deg,var(--cyan),#765cff);
+  color:#fff;
+  background: linear-gradient(135deg, var(--ps2-blue), #002255);
   font-family:'Cairo',sans-serif;
-  font-weight:900;
+  font-weight:800;
   font-size:13px;
   text-align:center;
   text-decoration:none;
   cursor:pointer;
-  box-shadow:0 7px 20px rgba(0,234,255,.13);
+  box-shadow:0 4px 12px rgba(0, 0, 0, 0.5);
   transition:.25s;
 }
 
 .download-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(0,234,255,.25);
-}
-
-.download-btn::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-80%;
-  width:45%;
-  height:100%;
-  background:rgba(255,255,255,.25);
-  transform:skewX(-25deg);
-  animation:shine 3s infinite;
-}
-
-@keyframes shine{
-  0%{left:-80%}
-  50%{left:130%}
-  100%{left:130%}
+  background: linear-gradient(135deg, var(--ps2-neon), var(--ps2-blue));
+  border-color: var(--ps2-cyan);
+  box-shadow:0 0 15px rgba(0, 212, 255, 0.5);
 }
 
 .download-btn.counting{
-  background:#151520!important;
-  color:var(--cyan)!important;
-  border:1px solid var(--cyan);
-  animation:pulse 1.3s infinite;
+  background: #050b14 !important;
+  color: var(--ps2-cyan) !important;
+  border-color: var(--ps2-cyan);
+  animation: ps2Pulse 1s infinite alternate;
   pointer-events:none;
 }
 
-@keyframes pulse{
-  50%{
-    box-shadow:0 0 20px rgba(0,234,255,.35);
-  }
+@keyframes ps2Pulse{
+  from { box-shadow: 0 0 5px var(--ps2-neon); }
+  to { box-shadow: 0 0 20px var(--ps2-cyan); }
 }
 
 /* Toast */
-
 #toast-container{
   position:fixed;
   bottom:22px;
@@ -285,11 +262,11 @@ header h1{
   min-width:250px;
   max-width:350px;
   padding:12px 16px;
-  border-radius:13px;
-  background:rgba(14,14,24,.95);
-  border:1px solid var(--cyan);
-  box-shadow:0 12px 35px rgba(0,0,0,.4);
-  backdrop-filter:blur(14px);
+  border-radius:8px;
+  background: rgba(3, 5, 8, 0.95);
+  border:1px solid var(--ps2-cyan);
+  box-shadow:0 0 20px rgba(0, 212, 255, 0.25);
+  backdrop-filter:blur(10px);
   font-size:13px;
   font-weight:700;
   transform:translateX(120%);
@@ -303,7 +280,6 @@ header h1{
 }
 
 /* زر التليجرام */
-
 .telegram-float{
   position:fixed;
   bottom:20px;
@@ -314,31 +290,31 @@ header h1{
   border-radius:50%;
   display:grid;
   place-items:center;
-  background:#151522;
-  border:1px solid var(--cyan);
-  box-shadow:0 0 20px rgba(0,234,255,.25);
+  background: var(--ps2-dark-blue);
+  border:1px solid var(--ps2-cyan);
+  box-shadow:0 0 15px rgba(0, 212, 255, 0.4);
   transition:.25s;
 }
 
 .telegram-float:hover{
-  transform:translateY(-4px) scale(1.05);
-  box-shadow:0 0 28px rgba(0,234,255,.45);
+  transform:scale(1.1);
+  box-shadow:0 0 25px var(--ps2-cyan);
 }
 
 .telegram-float img{
-  width:34px;
-  height:34px;
+  width:28px;
+  height:28px;
 }
 
 /* الفوتر */
-
 footer{
-  margin-top:20px;
-  padding:38px 20px;
+  margin-top:30px;
+  padding:35px 20px;
   text-align:center;
-  background:#06060c;
-  border-top:1px solid rgba(0,234,255,.15);
-  box-shadow:0 -10px 35px rgba(0,0,0,.25);
+  background: #010204;
+  border-top:2px solid var(--ps2-blue);
+  position: relative;
+  z-index: 2;
 }
 
 .footer-content{
@@ -354,10 +330,8 @@ footer{
   margin:0;
   font-size:22px;
   font-weight:900;
-  background:linear-gradient(90deg,#fff,var(--cyan),#d26bff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+  color: var(--ps2-cyan);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
 .social-links{
@@ -366,97 +340,50 @@ footer{
 }
 
 .social-icon{
-  width:45px;
-  height:45px;
-  border-radius:13px;
+  width:44px;
+  height:44px;
+  border-radius:8px;
   display:grid;
   place-items:center;
-  background:rgba(255,255,255,.04);
+  background: var(--ps2-dark-blue);
   border:1px solid var(--line);
   color:#fff;
   text-decoration:none;
-  font-size:19px;
+  font-size:18px;
   transition:.25s;
 }
 
 .social-icon:hover{
-  transform:translateY(-3px);
-  border-color:var(--cyan);
-  box-shadow:0 0 18px rgba(0,234,255,.18);
+  border-color:var(--ps2-cyan);
+  box-shadow:0 0 15px rgba(0, 212, 255, 0.4);
+  color: var(--ps2-cyan);
 }
 
 .footer-rights{
   margin:0;
-  color:#5f6170;
+  color:var(--muted);
   font-size:12px;
 }
 
-/* الموبايل */
+#noResults{
+  display:none; 
+  grid-column: 1/-1; 
+  text-align: center; 
+  padding: 50px 20px; 
+  color: var(--muted); 
+  font-weight: 700;
+}
 
+/* التجاوب مع الموبايل */
 @media(max-width:1000px){
-  .games-container{
-    grid-template-columns:repeat(3,1fr);
-  }
+  .games-container{ grid-template-columns:repeat(3,1fr); }
 }
 
 @media(max-width:700px){
-
-  header{
-    padding:10px 12px;
-  }
-
-  header h1{
-    font-size:19px;
-  }
-
-  .logo{
-    width:40px;
-    height:40px;
-  }
-
-  .search-box{
-    padding:0 12px;
-    margin-top:13px;
-  }
-
-  .games-container{
-    grid-template-columns:repeat(2,1fr);
-    gap:9px;
-    padding:12px;
-  }
-
-  .game-card{
-    padding:8px;
-    border-radius:14px;
-  }
-
-  .game-card img{
-    height:130px;
-    border-radius:10px;
-  }
-
-  .game-card h2{
-    font-size:13px;
-  }
-
-  .download-btn{
-    font-size:12px;
-    padding:9px 7px;
-  }
-
-  .telegram-float{
-    width:46px;
-    height:46px;
-    bottom:15px;
-    left:15px;
-  }
-}
-
-@media(max-width:390px){
-
-  .game-card img{
-    height:112px;
-  }
+  .games-container{ grid-template-columns:repeat(2,1fr); gap:10px; padding:12px; }
+  .game-card img{ height:130px; }
+  .game-card h2{ font-size:13px; }
+  .download-btn{ font-size:12px; padding:8px; }
 }
 </style>
 </head>
@@ -467,38 +394,32 @@ footer{
 
 <header>
   <div class="nav">
-
     <div class="logo">
       <i class="fa-solid fa-gamepad"></i>
     </div>
-
-    <h1>مصطفى جيمرز</h1>
-
+    <h1>مصطفى جيمرز - PS2</h1>
   </div>
 </header>
 
 <div class="search-box">
   <div class="search-wrap">
-
     <i class="fa-solid fa-magnifying-glass"></i>
-
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="ابحث عن لعبة..."
-      autocomplete="off"
-    >
-
+    <input id="searchInput" type="text" placeholder="ابحث عن لعبة PS2..." autocomplete="off">
   </div>
 </div>
 
 <main class="games-container">
 
+  <div id="noResults">
+    <i class="fa-solid fa-ghost" style="font-size: 45px; color: var(--ps2-cyan); margin-bottom: 12px; display: block;"></i>
+    عذراً، لم يتم العثور على اللعبة المطلوبة!
+  </div>
+
   <!-- ==================== الألعاب المضافة حديثاً (الأحدث في الأعلى) ==================== -->
 
   <!-- PES DAVIS -->
   <div class="game-card">
-    <img src="https://i.ibb.co/kgVhbghN/IMG-20260821-063736-486.jpg" alt="PES DAVIS">
+    <img src="https://i.ibb.co/kgVhbghN/IMG-20260821-063736-486.jpg" alt="PES DAVIS" loading="lazy">
     <h2>PES DAVIS</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/A8j79bWC9y7Vw6x" onclick="startDownload(event,this)">تحميل</a>
@@ -507,7 +428,7 @@ footer{
 
   <!-- PES 2027 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/kVgGK40S/IMG-20260821-060840-102.jpg" alt="PES 2027">
+    <img src="https://i.ibb.co/kVgGK40S/IMG-20260821-060840-102.jpg" alt="PES 2027" loading="lazy">
     <h2>PES 2027</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://sharemods.com/tysu208ws1y2/PES_2027_PS2_APK_BY_MUSTAFA_GAMERS.zip.html" onclick="startDownload(event,this)">تحميل</a>
@@ -516,7 +437,7 @@ footer{
 
   <!-- PES 2023 تعليق عربي (2) -->
   <div class="game-card">
-    <img src="https://i.ibb.co/7J4KBv5N/IMG-20260821-060734-569.jpg" alt="PES 2023 تعليق عربي v2">
+    <img src="https://i.ibb.co/7J4KBv5N/IMG-20260821-060734-569.jpg" alt="PES 2023 تعليق عربي v2" loading="lazy">
     <h2>PES 2023 تعليق عربي v2</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/W0MaWWoHC4kmkr6" onclick="startDownload(event,this)">تحميل</a>
@@ -525,7 +446,7 @@ footer{
 
   <!-- PES 2023 تعليق عربي (1) -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Zp2P43CG/IMG-20260821-060644-327.jpg" alt="PES 2023 تعليق عربي v1">
+    <img src="https://i.ibb.co/Zp2P43CG/IMG-20260821-060644-327.jpg" alt="PES 2023 تعليق عربي v1" loading="lazy">
     <h2>PES 2023 تعليق عربي v1</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/sxB6Mq8D7Zmk86Z" onclick="startDownload(event,this)">تحميل</a>
@@ -534,7 +455,7 @@ footer{
 
   <!-- YAKUZA -->
   <div class="game-card">
-    <img src="https://i.ibb.co/TBXCWy96/IMG-20260821-060600-109.jpg" alt="Yakuza">
+    <img src="https://i.ibb.co/TBXCWy96/IMG-20260821-060600-109.jpg" alt="Yakuza" loading="lazy">
     <h2>Yakuza</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/Q2WT82E746b11mt" onclick="startDownload(event,this)">تحميل</a>
@@ -543,7 +464,7 @@ footer{
 
   <!-- NARUTO UZUMAKI -->
   <div class="game-card">
-    <img src="https://i.ibb.co/cXgVZxsn/IMG-20260821-060426-500.jpg" alt="Naruto Uzumaki">
+    <img src="https://i.ibb.co/cXgVZxsn/IMG-20260821-060426-500.jpg" alt="Naruto Uzumaki" loading="lazy">
     <h2>Naruto Uzumaki</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/l2KYrmqggOH5M8d" onclick="startDownload(event,this)">تحميل</a>
@@ -552,7 +473,7 @@ footer{
 
   <!-- GTA باب الحارة -->
   <div class="game-card">
-    <img src="https://i.ibb.co/70NKXGL/IMG-20260821-060320-086.jpg" alt="GTA باب الحارة">
+    <img src="https://i.ibb.co/70NKXGL/IMG-20260821-060320-086.jpg" alt="GTA باب الحارة" loading="lazy">
     <h2>GTA باب الحارة</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/1RDWx9j7cO1ue1d" onclick="startDownload(event,this)">تحميل</a>
@@ -561,7 +482,7 @@ footer{
 
   <!-- THE SUFFERING 2 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/HTq5Hm5q/IMG-20260821-060232-729.jpg" alt="The Suffering 2">
+    <img src="https://i.ibb.co/HTq5Hm5q/IMG-20260821-060232-729.jpg" alt="The Suffering 2" loading="lazy">
     <h2>The Suffering 2</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/xN53qVCoT6c2pX7" onclick="startDownload(event,this)">تحميل</a>
@@ -570,7 +491,7 @@ footer{
 
   <!-- MANHUNT -->
   <div class="game-card">
-    <img src="https://i.ibb.co/ch5NV0t6/IMG-20260821-060142-400.jpg" alt="Manhunt">
+    <img src="https://i.ibb.co/ch5NV0t6/IMG-20260821-060142-400.jpg" alt="Manhunt" loading="lazy">
     <h2>Manhunt</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/gQ1r2Hk6518995D" onclick="startDownload(event,this)">تحميل</a>
@@ -579,7 +500,7 @@ footer{
 
   <!-- MORTAL KOMBAT ARMAGEDDON -->
   <div class="game-card">
-    <img src="https://i.ibb.co/vv3X3N9F/IMG-20260821-060049-598.jpg" alt="Mortal Kombat Armageddon">
+    <img src="https://i.ibb.co/vv3X3N9F/IMG-20260821-060049-598.jpg" alt="Mortal Kombat Armageddon" loading="lazy">
     <h2>Mortal Kombat Armageddon</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/XvdCt8R0v61Y5Uq" onclick="startDownload(event,this)">تحميل</a>
@@ -588,7 +509,7 @@ footer{
 
   <!-- TEKKEN 4 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/SX3FtHb2/IMG-20260821-060000-782.jpg" alt="Tekken 4">
+    <img src="https://i.ibb.co/SX3FtHb2/IMG-20260821-060000-782.jpg" alt="Tekken 4" loading="lazy">
     <h2>Tekken 4</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/WQ44rW839XJsxSu" onclick="startDownload(event,this)">تحميل</a>
@@ -597,7 +518,7 @@ footer{
 
   <!-- TRUE CRIME STREETS OF LA -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Y7vCNWgT/IMG-20260821-055912-242.jpg" alt="True crime street of la">
+    <img src="https://i.ibb.co/Y7vCNWgT/IMG-20260821-055912-242.jpg" alt="True crime street of la" loading="lazy">
     <h2>True crime street of la</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/992ro4gLnDS5S5p" onclick="startDownload(event,this)">تحميل</a>
@@ -606,7 +527,7 @@ footer{
 
   <!-- TRUE CRIME NEW YORK CITY -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Qj6bBVHm/IMG-20260821-055823-445.jpg" alt="True crime new York city">
+    <img src="https://i.ibb.co/Qj6bBVHm/IMG-20260821-055823-445.jpg" alt="True crime new York city" loading="lazy">
     <h2>True crime new York city</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/yIB3cyrT1o615t9" onclick="startDownload(event,this)">تحميل</a>
@@ -615,7 +536,7 @@ footer{
 
   <!-- MADAGASCAR -->
   <div class="game-card">
-    <img src="https://i.ibb.co/j9hsctmR/IMG-20260821-055724-563.jpg" alt="Madagascar">
+    <img src="https://i.ibb.co/j9hsctmR/IMG-20260821-055724-563.jpg" alt="Madagascar" loading="lazy">
     <h2>Madagascar</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/EwRMUcbYPO8kMSl" onclick="startDownload(event,this)">تحميل</a>
@@ -624,7 +545,7 @@ footer{
 
   <!-- ONIMUSHA 3 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Y7Sw9rpT/IMG-20260821-055524-055.jpg" alt="Onimusha 3">
+    <img src="https://i.ibb.co/Y7Sw9rpT/IMG-20260821-055524-055.jpg" alt="Onimusha 3" loading="lazy">
     <h2>Onimusha 3</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/896A0u9L0xL1qhZ" onclick="startDownload(event,this)">تحميل</a>
@@ -633,7 +554,7 @@ footer{
 
   <!-- BEN 10 ARABIC -->
   <div class="game-card">
-    <img src="https://i.ibb.co/WND71ZB1/IMG-20260821-055436-807.jpg" alt="Ben 10 Arabic">
+    <img src="https://i.ibb.co/WND71ZB1/IMG-20260821-055436-807.jpg" alt="Ben 10 Arabic" loading="lazy">
     <h2>Ben 10 Arabic</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/oL2U32D96eeaVK4" onclick="startDownload(event,this)">تحميل</a>
@@ -642,7 +563,7 @@ footer{
 
   <!-- MAD MAN -->
   <div class="game-card">
-    <img src="https://i.ibb.co/9kHmpWQ1/IMG-20260821-055359-370.jpg" alt="Mad man">
+    <img src="https://i.ibb.co/9kHmpWQ1/IMG-20260821-055359-370.jpg" alt="Mad man" loading="lazy">
     <h2>Mad man</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/tDsF7Alq4272fdR" onclick="startDownload(event,this)">تحميل</a>
@@ -651,7 +572,7 @@ footer{
 
   <!-- 007 FROM RUSSIA WITH LOVE -->
   <div class="game-card">
-    <img src="https://i.ibb.co/B5vVv5zJ/IMG-20260821-055310-111.jpg" alt="007 from Russia with love">
+    <img src="https://i.ibb.co/B5vVv5zJ/IMG-20260821-055310-111.jpg" alt="007 from Russia with love" loading="lazy">
     <h2>007 from Russia with love</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/5JO65hKs4F8U9l7" onclick="startDownload(event,this)">تحميل</a>
@@ -660,7 +581,7 @@ footer{
 
   <!-- 007 QUANTUM OF SOLACE -->
   <div class="game-card">
-    <img src="https://i.ibb.co/7dtRCp6T/IMG-20260821-055226-806.jpg" alt="007 Quantum of Solace">
+    <img src="https://i.ibb.co/7dtRCp6T/IMG-20260821-055226-806.jpg" alt="007 Quantum of Solace" loading="lazy">
     <h2>007 Quantum of Solace</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/DsOEi3VOQorcEQ2" onclick="startDownload(event,this)">تحميل</a>
@@ -669,7 +590,7 @@ footer{
 
   <!-- SHINOBI -->
   <div class="game-card">
-    <img src="https://i.ibb.co/0p2zBGcF/IMG-20260821-055144-938.jpg" alt="Shinobi">
+    <img src="https://i.ibb.co/0p2zBGcF/IMG-20260821-055144-938.jpg" alt="Shinobi" loading="lazy">
     <h2>Shinobi</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/163mhue8BRcz2oB" onclick="startDownload(event,this)">تحميل</a>
@@ -678,7 +599,7 @@ footer{
 
   <!-- MERCENARIES NEW -->
   <div class="game-card">
-    <img src="https://i.ibb.co/dJzYHzds/IMG-20260821-055059-512.jpg" alt="Mercenaries">
+    <img src="https://i.ibb.co/dJzYHzds/IMG-20260821-055059-512.jpg" alt="Mercenaries" loading="lazy">
     <h2>Mercenaries</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/gcfO2DwSqvqfj7x" onclick="startDownload(event,this)">تحميل</a>
@@ -687,7 +608,7 @@ footer{
 
   <!-- DRAGON BALL BUDOKAI 3 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Fkt3bHWN/IMG-20260821-054954-736.jpg" alt="Dragon Ball Budokai 3">
+    <img src="https://i.ibb.co/Fkt3bHWN/IMG-20260821-054954-736.jpg" alt="Dragon Ball Budokai 3" loading="lazy">
     <h2>Dragon Ball Budokai 3</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/E28rtRsF29s336q" onclick="startDownload(event,this)">تحميل</a>
@@ -696,7 +617,7 @@ footer{
 
   <!-- GOD OF WAR 1 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/1tCLRmGM/IMG-20260821-054916-976.jpg" alt="God Of War 1">
+    <img src="https://i.ibb.co/1tCLRmGM/IMG-20260821-054916-976.jpg" alt="God Of War 1" loading="lazy">
     <h2>God Of War 1</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/R08FvyTY2Uk2HR9" onclick="startDownload(event,this)">تحميل</a>
@@ -705,7 +626,7 @@ footer{
 
   <!-- SCARFACE -->
   <div class="game-card">
-    <img src="https://i.ibb.co/tP2FPdxm/IMG-20260821-054834-062.jpg" alt="Scarface">
+    <img src="https://i.ibb.co/tP2FPdxm/IMG-20260821-054834-062.jpg" alt="Scarface" loading="lazy">
     <h2>Scarface</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/rtC96521PByQZyB" onclick="startDownload(event,this)">تحميل</a>
@@ -714,7 +635,7 @@ footer{
 
   <!-- CONSTANTINE -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Vp58b7z8/IMG-20260821-054749-468.jpg" alt="Constantine">
+    <img src="https://i.ibb.co/Vp58b7z8/IMG-20260821-054749-468.jpg" alt="Constantine" loading="lazy">
     <h2>Constantine</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/32mRDZi29733TdC" onclick="startDownload(event,this)">تحميل</a>
@@ -723,7 +644,7 @@ footer{
 
   <!-- FC 26 تعليق عربي -->
   <div class="game-card">
-    <img src="https://i.ibb.co/PsjLpDZB/IMG-20260821-054659-021.jpg" alt="FC 26 تعليق عربي">
+    <img src="https://i.ibb.co/PsjLpDZB/IMG-20260821-054659-021.jpg" alt="FC 26 تعليق عربي" loading="lazy">
     <h2>FC 26 تعليق عربي</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/8Q3zpf36ufUW9l1" onclick="startDownload(event,this)">تحميل</a>
@@ -732,7 +653,7 @@ footer{
 
   <!-- JET LI -->
   <div class="game-card">
-    <img src="https://i.ibb.co/hxNq5pYk/IMG-20260821-054615-246.jpg" alt="Jet Li">
+    <img src="https://i.ibb.co/hxNq5pYk/IMG-20260821-054615-246.jpg" alt="Jet Li" loading="lazy">
     <h2>Jet Li</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/W64fHTm7L8PO1XX" onclick="startDownload(event,this)">تحميل</a>
@@ -741,7 +662,7 @@ footer{
 
   <!-- DEVIL MAY CRY 2 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/wFVv4Sxm/IMG-20260821-054529-422.jpg" alt="Devil may cry 2">
+    <img src="https://i.ibb.co/wFVv4Sxm/IMG-20260821-054529-422.jpg" alt="Devil may cry 2" loading="lazy">
     <h2>Devil may cry 2</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/PuzOoou5HUG7lCL" onclick="startDownload(event,this)">تحميل</a>
@@ -750,7 +671,7 @@ footer{
 
   <!-- DEVIL MAY CRY 1 -->
   <div class="game-card">
-    <img src="https://i.ibb.co/Z6pbZf90/IMG-20260821-054319-319.jpg" alt="Devil may cry 1">
+    <img src="https://i.ibb.co/Z6pbZf90/IMG-20260821-054319-319.jpg" alt="Devil may cry 1" loading="lazy">
     <h2>Devil may cry 1</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/JdvFT36Afk28k6U" onclick="startDownload(event,this)">تحميل</a>
@@ -759,7 +680,7 @@ footer{
 
   <!-- MEDAL OF HONOR VANGUARD -->
   <div class="game-card">
-    <img src="https://i.ibb.co/bg9LbxkK/IMG-20260821-054226-017.jpg" alt="Medal of honor vanguard">
+    <img src="https://i.ibb.co/bg9LbxkK/IMG-20260821-054226-017.jpg" alt="Medal of honor vanguard" loading="lazy">
     <h2>Medal of honor vanguard</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/DbZ9wu6cFe6z2fk" onclick="startDownload(event,this)">تحميل</a>
@@ -768,7 +689,7 @@ footer{
 
   <!-- FIFA STREET -->
   <div class="game-card">
-    <img src="https://i.ibb.co/ZRw7Rf4x/IMG-20260821-054128-700.jpg" alt="FIFA STREET">
+    <img src="https://i.ibb.co/ZRw7Rf4x/IMG-20260821-054128-700.jpg" alt="FIFA STREET" loading="lazy">
     <h2>FIFA STREET</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/kQVfl04d08fDHbB" onclick="startDownload(event,this)">تحميل</a>
@@ -777,7 +698,7 @@ footer{
 
   <!-- GOD OF WAR 2 AR -->
   <div class="game-card">
-    <img src="https://i.ibb.co/hRSXgS25/IMG-20260821-053900-171.jpg" alt="God of war 2 AR">
+    <img src="https://i.ibb.co/hRSXgS25/IMG-20260821-053900-171.jpg" alt="God of war 2 AR" loading="lazy">
     <h2>God of war 2 AR</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/k5zfpy746Ra678u" onclick="startDownload(event,this)">تحميل</a>
@@ -788,7 +709,7 @@ footer{
 
   <!-- BULLY -->
   <div class="game-card">
-    <img src="images/214.jpg" alt="bully ar">
+    <img src="images/214.jpg" alt="bully ar" loading="lazy">
     <h2>BULLY AR</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/3E481xqTguT6083" onclick="startDownload(event,this)">تحميل</a>
@@ -797,7 +718,7 @@ footer{
 
   <!-- BATMAN -->
   <div class="game-card">
-    <img src="images/bmbn.jpg" alt="batman begins">
+    <img src="images/bmbn.jpg" alt="batman begins" loading="lazy">
     <h2>batman begins</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/NzJwV4m0g0tXJ2a" onclick="startDownload(event,this)">تحميل</a>
@@ -806,7 +727,7 @@ footer{
 
   <!-- PES 2026 -->
   <div class="game-card">
-    <img src="images/psa.jpg" alt="pes 2026">
+    <img src="images/psa.jpg" alt="pes 2026" loading="lazy">
     <h2>PES 2026</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/OTsTG210L5sMQk6" onclick="startDownload(event,this)">تحميل</a>
@@ -815,7 +736,7 @@ footer{
 
   <!-- TEKKEN 3 -->
   <div class="game-card">
-    <img src="images/IMG_20260530_031332_486.jpg" alt="tekken 3">
+    <img src="images/IMG_20260530_031332_486.jpg" alt="tekken 3" loading="lazy">
     <h2>TEKKEN 3</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/ei9tKzrdM79rn11" onclick="startDownload(event,this)">تحميل</a>
@@ -824,7 +745,7 @@ footer{
 
   <!-- GOD HAND -->
   <div class="game-card">
-    <img src="images/IMG_20260530_004811_431.jpg" alt="god hand">
+    <img src="images/IMG_20260530_004811_431.jpg" alt="god hand" loading="lazy">
     <h2>GOD HAND</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/GM98sl4OkCnG2Me" onclick="startDownload(event,this)">تحميل</a>
@@ -833,7 +754,7 @@ footer{
 
   <!-- PES 2014 -->
   <div class="game-card">
-    <img src="images/pes14.jpg" alt="pes 2014">
+    <img src="images/pes14.jpg" alt="pes 2014" loading="lazy">
     <h2>PES 2014</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/RiW3t503168FmGh" onclick="startDownload(event,this)">تحميل</a>
@@ -842,7 +763,7 @@ footer{
 
   <!-- THE PUNISHER -->
   <div class="game-card">
-    <img src="images/pu.jpg" alt="punisher">
+    <img src="images/pu.jpg" alt="punisher" loading="lazy">
     <h2>the Punisher</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/1c41Ga2nG8W1vKL" onclick="startDownload(event,this)">تحميل</a>
@@ -851,7 +772,7 @@ footer{
 
   <!-- MERCENARIES -->
   <div class="game-card">
-    <img src="images/mer.jpg" alt="hk">
+    <img src="images/mer.jpg" alt="hk" loading="lazy">
     <h2>mercenaries</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/gcfO2DwSqvqfj7x" onclick="startDownload(event,this)">تحميل</a>
@@ -860,7 +781,7 @@ footer{
 
   <!-- TOM AND JERRY -->
   <div class="game-card">
-    <img src="images/tjps.jpg" alt="tom and jerry">
+    <img src="images/tjps.jpg" alt="tom and jerry" loading="lazy">
     <h2>tom and jerry</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/q0qee5x18Q188QK" onclick="startDownload(event,this)">تحميل</a>
@@ -869,7 +790,7 @@ footer{
 
   <!-- SNIPER ELITE -->
   <div class="game-card">
-    <img src="images/snp.jpg" alt="sniper elite">
+    <img src="images/snp.jpg" alt="sniper elite" loading="lazy">
     <h2>sniper elite</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/FsrQVHO4I8qsVdf" onclick="startDownload(event,this)">تحميل</a>
@@ -878,7 +799,7 @@ footer{
 
   <!-- JACKIE CHAN -->
   <div class="game-card">
-    <img src="images/jca.jpg" alt="Jackie chan adventures">
+    <img src="images/jca.jpg" alt="Jackie chan adventures" loading="lazy">
     <h2>jackie chan adventures</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/V32fZ1ywOQYKK86" onclick="startDownload(event,this)">تحميل</a>
@@ -887,7 +808,7 @@ footer{
 
   <!-- VAN HELSING -->
   <div class="game-card">
-    <img src="images/vh.jpg" alt="hk">
+    <img src="images/vh.jpg" alt="hk" loading="lazy">
     <h2>van helsing</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/tqd8VwcpOw90A7u" onclick="startDownload(event,this)">تحميل</a>
@@ -896,7 +817,7 @@ footer{
 
   <!-- DEVIL MAY CRY 3 -->
   <div class="game-card">
-    <img src="images/dmc3.jpg" alt="devil may cry 3">
+    <img src="images/dmc3.jpg" alt="devil may cry 3" loading="lazy">
     <h2>devil may cry 3</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/K85nH3UHjQTP7G0" onclick="startDownload(event,this)">تحميل</a>
@@ -905,7 +826,7 @@ footer{
 
   <!-- RESIDENT EVIL 4 -->
   <div class="game-card">
-    <img src="images/re4.jpg" alt="resident evil 4">
+    <img src="images/re4.jpg" alt="resident evil 4" loading="lazy">
     <h2>resident evil 4</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://vexfile.com/download/Qz5JEBudz0" onclick="startDownload(event,this)">تحميل</a>
@@ -914,7 +835,7 @@ footer{
 
   <!-- PES 2013 -->
   <div class="game-card">
-    <img src="images/IMG_20260530_005406_213.jpg" alt="PES 2013">
+    <img src="images/IMG_20260530_005406_213.jpg" alt="PES 2013" loading="lazy">
     <h2>PES 2013</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/2023m5Puko69zR9" onclick="startDownload(event,this)">تحميل</a>
@@ -923,7 +844,7 @@ footer{
 
   <!-- BLACK -->
   <div class="game-card">
-    <img src="images/IMG_20260530_005613_363.jpg" alt="BLACK">
+    <img src="images/IMG_20260530_005613_363.jpg" alt="BLACK" loading="lazy">
     <h2>BLACK</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://sharemods.com/25eylyhkuiqz/BLACK-PS2-APK-v0.1-PORT.zip.html" onclick="startDownload(event,this)">تحميل</a>
@@ -932,7 +853,7 @@ footer{
 
   <!-- GOD OF WAR 2 -->
   <div class="game-card">
-    <img src="images/IMG_20260530_005643_174.jpg" alt="GOD OF WAR 2">
+    <img src="images/IMG_20260530_005643_174.jpg" alt="GOD OF WAR 2" loading="lazy">
     <h2>GOD OF WAR 2</h2>
     <div class="card-actions">
       <a class="download-btn" href="https://modsfire.com/k5zfpy746Ra678u" onclick="startDownload(event,this)">تحميل</a>
@@ -941,12 +862,9 @@ footer{
 
 </main>
 
-
-<!-- تليجرام -->
 <a href="https://t.me/mustafaGWZ" target="_blank" class="telegram-float" title="تابعني على التليجرام">
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
 </a>
-
 
 <footer>
   <div class="footer-content">
@@ -963,28 +881,32 @@ footer{
   </div>
 </footer>
 
-
 <script>
-
-/* البحث */
+/* البحث الذكي */
 const searchInput = document.getElementById("searchInput");
+const noResults = document.getElementById("noResults");
 
-searchInput.addEventListener("input",function(){
+searchInput.addEventListener("input", function(){
   const query = this.value.toLowerCase().trim();
+  let hasMatch = false;
 
-  document.querySelectorAll(".game-card").forEach(card=>{
+  document.querySelectorAll(".game-card").forEach(card => {
     const title = card.querySelector("h2").textContent.toLowerCase();
 
     if(title.includes(query)){
       card.classList.remove("hidden");
+      hasMatch = true;
     }else{
       card.classList.add("hidden");
     }
   });
+
+  if(noResults){
+    noResults.style.display = hasMatch ? "none" : "block";
+  }
 });
 
-
-/* Toast */
+/* التنبيهات */
 function showToast(message){
   const container = document.getElementById("toast-container");
   const toast = document.createElement("div");
@@ -994,51 +916,39 @@ function showToast(message){
 
   container.appendChild(toast);
 
-  setTimeout(()=>{
-    toast.classList.add("show");
-  },50);
+  setTimeout(() => toast.classList.add("show"), 50);
 
-  setTimeout(()=>{
+  setTimeout(() => {
     toast.classList.remove("show");
-    setTimeout(()=>{
-      toast.remove();
-    },400);
-  },3000);
+    setTimeout(() => toast.remove(), 400);
+  }, 3000);
 }
 
-
-/* تحميل */
-function startDownload(event,element){
+/* التحميل */
+function startDownload(event, element){
   event.preventDefault();
-
   const targetUrl = element.getAttribute("href");
   const card = element.closest(".game-card");
   const gameTitle = card.querySelector("h2").textContent.trim();
 
   let timeLeft = 3;
-
   element.classList.add("counting");
   element.textContent = `تجهيز.. (${timeLeft})`;
 
-  showToast(
-    `🛡️ جاري تجهيز رابط التحميل:<br>
-    <span style="color:#00eaff">${gameTitle}</span>`
-  );
+  showToast(`🎮 جاري تجهيز اللعبة:<br><span style="color:var(--ps2-cyan)">${gameTitle}</span>`);
 
-  const countdown = setInterval(()=>{
+  const countdown = setInterval(() => {
     timeLeft--;
-
     if(timeLeft <= 0){
       clearInterval(countdown);
       element.classList.remove("counting");
       element.textContent = "تحميل";
-      window.open(targetUrl,"_blank");
+      window.open(targetUrl, "_blank");
     }else{
       element.textContent = `تجهيز.. (${timeLeft})`;
     }
-  },1000);
+  }, 1000);
 }
-
 </script>
 
 </body>
