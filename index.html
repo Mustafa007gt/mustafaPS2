@@ -195,7 +195,7 @@ header h1{
 }
 
 .game-card h2{
-  margin:11px 3px 8px;
+  margin:11px 3px 12px;
   font-size:16px;
   color:#fff;
   font-weight:900;
@@ -203,35 +203,6 @@ header h1{
   overflow:hidden;
   text-overflow:ellipsis;
   text-align:right;
-}
-
-/* التقييم */
-
-.rating-stars{
-  display:flex;
-  justify-content:center;
-  flex-direction:row-reverse;
-  gap:4px;
-  margin:5px 0 10px;
-}
-
-.rating-stars span{
-  font-size:20px;
-  color:#444;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.rating-stars span:hover,
-.rating-stars span:hover ~ span,
-.rating-stars span.active,
-.rating-stars span.active ~ span{
-  color:var(--gold);
-  text-shadow:0 0 10px var(--gold);
-}
-
-.rating-stars span:hover{
-  transform:scale(1.2);
 }
 
 /* الأزرار */
@@ -344,10 +315,6 @@ header h1{
 .toast-notification.show{
   transform:translateX(0);
   opacity:1;
-}
-
-.toast-rating{
-  border-color:var(--gold);
 }
 
 /* زر التليجرام */
@@ -492,10 +459,6 @@ footer{
     padding:9px 7px;
   }
 
-  .rating-stars span{
-    font-size:17px;
-  }
-
   .telegram-float{
     width:46px;
     height:46px;
@@ -508,14 +471,6 @@ footer{
 
   .game-card img{
     height:112px;
-  }
-
-  .rating-stars{
-    gap:2px;
-  }
-
-  .rating-stars span{
-    font-size:15px;
   }
 }
 </style>
@@ -561,14 +516,6 @@ footer{
 
     <h2>BULLY AR</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -587,14 +534,6 @@ footer{
     <img src="images/bmbn.jpg" alt="batman begins">
 
     <h2>batman begins</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -615,14 +554,6 @@ footer{
 
     <h2>PES 2026</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -641,14 +572,6 @@ footer{
     <img src="images/IMG_20260530_031332_486.jpg" alt="tekken 3">
 
     <h2>TEKKEN 3</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -669,14 +592,6 @@ footer{
 
     <h2>GOD HAND</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -695,14 +610,6 @@ footer{
     <img src="images/pes14.jpg" alt="pes 2014">
 
     <h2>PES 2014</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -723,14 +630,6 @@ footer{
 
     <h2>the Punisher</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -749,14 +648,6 @@ footer{
     <img src="images/mer.jpg" alt="hk">
 
     <h2>mercenaries</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -777,14 +668,6 @@ footer{
 
     <h2>tom and jerry</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -803,14 +686,6 @@ footer{
     <img src="images/snp.jpg" alt="sniper elite">
 
     <h2>sniper elite</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -831,14 +706,6 @@ footer{
 
     <h2>jackie chan adventures</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -857,14 +724,6 @@ footer{
     <img src="images/vh.jpg" alt="hk">
 
     <h2>van helsing</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -885,14 +744,6 @@ footer{
 
     <h2>devil may cry 3</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -911,14 +762,6 @@ footer{
     <img src="images/re4.jpg" alt="resident evil 4">
 
     <h2>resident evil 4</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -939,14 +782,6 @@ footer{
 
     <h2>PES 2013</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -966,14 +801,6 @@ footer{
 
     <h2>BLACK</h2>
 
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
-
     <div class="card-actions">
       <a
         class="download-btn"
@@ -992,14 +819,6 @@ footer{
     <img src="images/IMG_20260530_005643_174.jpg" alt="GOD OF WAR 2">
 
     <h2>GOD OF WAR 2</h2>
-
-    <div class="rating-stars" data-stars="5">
-      <span data-value="5">★</span>
-      <span data-value="4">★</span>
-      <span data-value="3">★</span>
-      <span data-value="2">★</span>
-      <span data-value="1">★</span>
-    </div>
 
     <div class="card-actions">
       <a
@@ -1102,7 +921,7 @@ searchInput.addEventListener("input",function(){
 
 /* Toast */
 
-function showToast(message,isRating=false){
+function showToast(message){
 
   const container =
   document.getElementById("toast-container");
@@ -1112,10 +931,6 @@ function showToast(message,isRating=false){
 
   toast.className =
   "toast-notification";
-
-  if(isRating){
-    toast.classList.add("toast-rating");
-  }
 
   toast.innerHTML=message;
 
@@ -1189,81 +1004,6 @@ function startDownload(event,element){
   },1000);
 
 }
-
-
-/* نظام النجوم */
-
-document
-.querySelectorAll(".rating-stars")
-.forEach(container=>{
-
-  const defaultStars=
-  parseInt(
-    container.getAttribute("data-stars")
-  ) || 5;
-
-  const stars=
-  container.querySelectorAll("span");
-
-  function setStarsValue(value){
-
-    stars.forEach(star=>{
-
-      const starValue=
-      parseInt(
-        star.getAttribute("data-value")
-      );
-
-      if(starValue<=value){
-        star.classList.add("active");
-      }else{
-        star.classList.remove("active");
-      }
-
-    });
-
-  }
-
-  setStarsValue(defaultStars);
-
-  stars.forEach(star=>{
-
-    star.addEventListener("click",function(e){
-
-      e.stopPropagation();
-
-      const value=
-      parseInt(
-        this.getAttribute("data-value")
-      );
-
-      const card=
-      container.closest(".game-card");
-
-      const title=
-      card
-      ? card.querySelector("h2").textContent.trim()
-      : "اللعبة";
-
-      container.setAttribute(
-        "data-stars",
-        value
-      );
-
-      setStarsValue(value);
-
-      showToast(
-        `⭐ شكراً لتقييمك لعبة
-        <span style="color:#ffd43b">${title}</span>
-        بـ ${value} نجوم!`,
-        true
-      );
-
-    });
-
-  });
-
-});
 
 </script>
 
